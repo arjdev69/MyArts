@@ -11,7 +11,8 @@ export const Container = styled.View`
   align-items: center;
   justify-content: center;
   background: ${COLORS.transparentDarkColor};
-  margin: 300px 0px 0px 0px;
+  margin: 0px 0px 0px;
+  margin-top: ${HP(30)};
   border-radius: 25px;
 `;
 
@@ -57,8 +58,8 @@ export const styles = StyleSheet.create({
     width: WP('100%'),
   },
   image: {
-    height: 94,
-    width: 94,
+    height: 64,
+    width: 64,
   },
   label: {
     fontSize: HP('4%'),

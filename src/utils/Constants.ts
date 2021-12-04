@@ -1,4 +1,4 @@
-export const appLabels = {
+export const APPLABELS = {
   appName: "MyArt's",
 };
 
@@ -8,3 +8,5 @@ export const URL = {
   imageStart: 'https://www.artic.edu/iiif/2/{',
   imageEnd: '}/full/843,/0/default.jpg',
 };
+
+export const ICON_LOGO = require('assets/icons/atom.png');

@@ -1,0 +1,21 @@
+{
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "cwd": "babelrc",
+        "root": ["./src"],
+        "extensions": [".tsx",".js", ".ios.js", ".android.js", ".ts", ".jsx"],
+        "alias": {
+          "@assets": "./src/assets",
+          "@routes": "./src/routes",
+          "@components": "./src/components",
+          "@views": "./src/views",
+          "@services": "./src/services",
+          "@styles": "./src/styles",
+          "@utils": "./src/utils"
+        }
+      }
+    ]
+  ]
+}

@@ -5,14 +5,15 @@ import {signOut} from 'store/modules/auth/actions';
 
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-//import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import Icon from 'react-native-vector-icons/AntDesign';
 
 import {ListView, LoginView} from 'views';
+import {Header} from 'container';
+import {Button} from 'components';
 
 import {COLORS} from 'styles';
 import {styles} from './styles';
-import {Button} from 'components';
-import {Text, View} from 'react-native';
+import {View} from 'react-native';
 
 const Stack = createStackNavigator();
 
@@ -24,6 +25,7 @@ const Routes: React.FC = () => {
     arts: 'Arts',
     cart: 'Cart',
   };
+
   const press = (nav: string[]) => {
     dispatch(signOut());
     nav.push('login');
@@ -56,18 +58,20 @@ const Routes: React.FC = () => {
               height: 100,
             },
             gestureEnabled: false,
-            headerLeft: () => <></>,
+            headerLeft: () => <Header />,
             headerRight: () => (
-              <Button
-                loading={false}
-                style={styles.button}
-                activeOpacity={0.6}
-                disabled={false}
-                onPress={() => {
-                  press(navigation);
-                }}>
-                <Text style={{color: 'white'}}>X</Text>
-              </Button>
+              <View style={styles.viewButton}>
+                <Button
+                  loading={false}
+                  style={styles.button}
+                  activeOpacity={0.6}
+                  disabled={false}
+                  onPress={() => {
+                    press(navigation);
+                  }}>
+                  <Icon name="logout" size={24} color={COLORS.lightColor} />
+                </Button>
+              </View>
             ),
           })}
         />

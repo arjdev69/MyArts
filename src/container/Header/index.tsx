@@ -12,6 +12,10 @@ import {View} from 'react-native';
 import {APPLABELS} from 'utils/Constants';
 import {signOut} from 'store/modules/auth/actions';
 
+export interface Props {
+  nav: any;
+}
+
 const Header: React.FC<Props> = _props => {
   const dispatch = useDispatch();
   const [changeView, setChangeView] = useState(false);

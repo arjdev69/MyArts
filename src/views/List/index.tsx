@@ -1,14 +1,16 @@
-import React, {useEffect, useLayoutEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import * as UI from 'react-native';
 
 import {useSelector, useDispatch} from 'react-redux';
-import {getDetailArt, getListArts} from 'store/modules/Arts/actions';
+import {getListArts} from 'store/modules/Arts/actions';
 
 import {List} from 'container';
+import {Loading} from 'components';
+import {COLORS} from 'styles';
+import {styles} from 'views/Login/styles';
 
 const ListView: React.FC = () => {
   const dispatch = useDispatch();
-  const [load, setLoad] = useState(false);
   const artsData = useSelector((state: any) => state.Arts);
 
   const fetchApi = () => {
@@ -16,14 +18,19 @@ const ListView: React.FC = () => {
   };
 
   useEffect(() => {
-    fetchApi({});
+    fetchApi();
   }, []);
 
-  console.log('1', artsData.loading);
-
   return (
-    <UI.View style={{backgroundColor: 'red'}}>
-      <List />
+    <UI.View>
+      {artsData.loading && (
+        <Loading
+          size={'large'}
+          color={COLORS.nextColor}
+          styles={styles.loading}
+        />
+      )}
+      <List _data={artsData.arts} />
     </UI.View>
   );
 };

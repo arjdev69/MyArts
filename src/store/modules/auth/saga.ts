@@ -1,7 +1,7 @@
 import {Alert} from 'react-native';
 import {takeLatest, call, put, all} from 'redux-saga/effects';
 
-import api from 'services';
+import {api} from 'services';
 
 import {signInSuccess, signFailure} from './actions';
 
@@ -18,7 +18,7 @@ export function* signIn({payload}) {
       token: response.token,
     };
 
-    console.log('123: ' + response);
+    console.log(response);
 
     if (login) {
       api.defaults.headers.Authorization = `Bearer ${login.token}`;

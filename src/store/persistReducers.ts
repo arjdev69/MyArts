@@ -6,7 +6,6 @@ export default (reducers: any) => {
     {
       key: 'MyArts',
       storage: AsyncStorage,
-      //whitelist: ['Calculator'],
     },
     reducers,
   );

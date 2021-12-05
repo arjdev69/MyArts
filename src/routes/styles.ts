@@ -5,7 +5,7 @@ import {COLORS} from 'styles';
 export const styles = StyleSheet.create({
   button: {
     alignItems: 'center',
-    padding: 10,
+    padding: 15,
     margin: 5,
     marginRight: 15,
     backgroundColor: COLORS.transparentDarkColor,

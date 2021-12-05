@@ -7,7 +7,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 //import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-import {LoginView} from 'views';
+import {ListView, LoginView} from 'views';
 
 import {COLORS} from 'styles';
 import {styles} from './styles';
@@ -26,7 +26,7 @@ const Routes: React.FC = () => {
   };
   const press = (nav: string[]) => {
     dispatch(signOut());
-    nav.push('Login');
+    nav.push('login');
   };
 
   return (
@@ -48,16 +48,12 @@ const Routes: React.FC = () => {
         />
         <Stack.Screen
           name={routes.arts}
-          component={() => (
-            <View>
-              <Text>List</Text>
-            </View>
-          )}
+          component={ListView}
           options={({navigation}) => ({
             title: '',
             headerStyle: {
-              backgroundColor: COLORS.primary,
-              height: 10,
+              backgroundColor: COLORS.secondaryDark,
+              height: 100,
             },
             gestureEnabled: false,
             headerLeft: () => <></>,
@@ -70,21 +66,20 @@ const Routes: React.FC = () => {
                 onPress={() => {
                   press(navigation);
                 }}>
-                {/* <Icon name="location-exit" size={25} color="#FFF" /> */}
-                <Text>DD</Text>
+                <Text style={{color: 'white'}}>X</Text>
               </Button>
             ),
           })}
         />
 
-        <Stack.Screen
+        {/* <Stack.Screen
           name={routes.cart}
-          component={() => <View />}
+          component={<View />}
           // eslint-disable-next-line @typescript-eslint/no-unused-vars
           options={({navigation}) => ({
             title: '',
           })}
-        />
+        /> */}
       </Stack.Navigator>
     </NavigationContainer>
   );

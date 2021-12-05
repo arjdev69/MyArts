@@ -6,7 +6,7 @@ export default styled(LinearGradient).attrs({
   start: SIZES.gradient.position.start,
   end: SIZES.gradient.position.end,
   locations: SIZES.gradient.location,
-  colors: [COLORS.secondary, COLORS.primary],
+  colors: [COLORS.secondary, COLORS.primary, COLORS.secondary, COLORS.primary],
 })`
   flex: 1;
 `;

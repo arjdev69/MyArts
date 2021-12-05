@@ -56,7 +56,7 @@ export const SIZES = {
         y: 0.9,
       },
     },
-    location: [0.2, 0.9, 0.4],
+    location: [0.2, 0.4, 0.9, 0.4],
   },
   titleMenu: 20,
   titleMenuSpacing: 4,

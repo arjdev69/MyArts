@@ -26,7 +26,7 @@ const LoginView: React.FC<Props> = _props => {
 
   useEffect(() => {
     if (auth.signed) {
-      _props.navigation.push('ListCompanys');
+      _props.navigation.push('Arts');
     }
   }, [_props.navigation, auth.signed]);
 

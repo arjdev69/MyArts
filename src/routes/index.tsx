@@ -5,7 +5,7 @@ import {signOut} from 'store/modules/auth/actions';
 
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-import Icon from 'react-native-vector-icons/AntDesign';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 import {ListView, LoginView} from 'views';
 import {Header} from 'container';
@@ -55,10 +55,10 @@ const Routes: React.FC = () => {
             title: '',
             headerStyle: {
               backgroundColor: COLORS.secondaryDark,
-              height: 100,
+              height: 120,
             },
             gestureEnabled: false,
-            headerLeft: () => <Header />,
+            headerLeft: () => <Header nav={navigation} />,
             headerRight: () => (
               <View style={styles.viewButton}>
                 <Button
@@ -66,10 +66,8 @@ const Routes: React.FC = () => {
                   style={styles.button}
                   activeOpacity={0.6}
                   disabled={false}
-                  onPress={() => {
-                    press(navigation);
-                  }}>
-                  <Icon name="logout" size={24} color={COLORS.lightColor} />
+                  onPress={() => {}}>
+                  <Icon name="opencart" size={24} color={COLORS.lightColor} />
                 </Button>
               </View>
             ),

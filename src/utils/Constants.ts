@@ -1,5 +1,6 @@
 export const APPLABELS = {
   appName: "MyArt's",
+  logout: 'Logout',
 };
 
 export const URL = {

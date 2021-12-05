@@ -11,7 +11,6 @@ export const Container = styled.View`
   align-items: center;
   justify-content: flex-start;
   flex-direction: row;
-  background: ${COLORS.transparentDarkColor};
   width: ${WP(85)};
   padding: 10px;
 `;
@@ -19,6 +18,7 @@ export const Container = styled.View`
 export const LabelText = styled(Label)`
   padding: 10px;
   font-size: ${HP(2.2)};
+  color: ${COLORS.primary};
 `;
 
 export const ButtonCustom = styled(Button)`
@@ -32,5 +32,23 @@ export const styles = StyleSheet.create({
   },
   label: {
     fontSize: HP('4%'),
+  },
+  button: {
+    alignItems: 'center',
+    padding: 10,
+    marginRight: 10,
+    backgroundColor: COLORS.transparentDarkColor,
+    borderRadius: 30,
+    justifyContent: 'center',
+  },
+  btnClose: {
+    padding: 10,
+  },
+  viewButton: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    width: 80,
   },
 });

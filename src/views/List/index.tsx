@@ -9,7 +9,6 @@ import {List} from 'container';
 const ListView: React.FC = () => {
   const dispatch = useDispatch();
   const [load, setLoad] = useState(false);
-  const {user} = useSelector((state: any) => state.Auth);
   const artsData = useSelector((state: any) => state.Arts);
 
   const fetchApi = () => {

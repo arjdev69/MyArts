@@ -1,13 +1,12 @@
 import React from 'react';
 
-import {useDispatch, useSelector} from 'react-redux';
-import {signOut} from 'store/modules/auth/actions';
+import {useSelector} from 'react-redux';
 
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-import {ListView, LoginView} from 'views';
+import {ListView, LoginView, CartView} from 'views';
 import {Header} from 'container';
 import {Button} from 'components';
 
@@ -18,17 +17,11 @@ import {View} from 'react-native';
 const Stack = createStackNavigator();
 
 const Routes: React.FC = () => {
-  const dispatch = useDispatch();
   const auth = useSelector((state: any) => state.Auth);
   const routes = {
     login: 'login',
     arts: 'Arts',
     cart: 'Cart',
-  };
-
-  const press = (nav: string[]) => {
-    dispatch(signOut());
-    nav.push('login');
   };
 
   return (
@@ -66,22 +59,27 @@ const Routes: React.FC = () => {
                   style={styles.button}
                   activeOpacity={0.6}
                   disabled={false}
-                  onPress={() => {}}>
+                  onPress={() => {
+                    navigation.push('Cart');
+                  }}>
                   <Icon name="opencart" size={24} color={COLORS.lightColor} />
                 </Button>
               </View>
             ),
           })}
         />
-
-        {/* <Stack.Screen
+        <Stack.Screen
           name={routes.cart}
-          component={<View />}
-          // eslint-disable-next-line @typescript-eslint/no-unused-vars
+          component={CartView}
           options={({navigation}) => ({
             title: '',
+            headerStyle: {
+              backgroundColor: COLORS.secondaryDark,
+              height: 120,
+            },
+            gestureEnabled: false,
           })}
-        /> */}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -2,14 +2,17 @@ import React, {useState} from 'react';
 
 import {useDispatch, useSelector} from 'react-redux';
 
+import {View} from 'react-native';
+
+import {CommonActions} from '@react-navigation/native';
+
 import Icon from 'react-native-vector-icons/FontAwesome';
 import IconDesign from 'react-native-vector-icons/AntDesign';
 
 import {COLORS} from 'styles';
 import {styles, Container, LabelText, ButtonCustom} from './styles';
 import {Button} from 'components';
-import {View} from 'react-native';
-import {APPLABELS} from 'utils/Constants';
+import {APPLABELS, routes} from 'utils/Constants';
 import {signOut} from 'store/modules/auth/actions';
 
 export interface Props {
@@ -32,7 +35,16 @@ const Header: React.FC<Props> = _props => {
             disabled={false}
             onPress={() => {
               dispatch(signOut());
-              _props.nav.push('login');
+              _props.nav.dispatch(
+                CommonActions.reset({
+                  index: 0,
+                  routes: [
+                    {
+                      name: routes.login,
+                    },
+                  ],
+                }),
+              );
             }}>
             <IconDesign name="logout" size={24} color={COLORS.lightColor} />
           </Button>

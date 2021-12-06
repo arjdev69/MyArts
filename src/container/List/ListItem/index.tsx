@@ -48,7 +48,7 @@ const ListItem: React.FC<Props> = props => {
       <ImageLoad
         styles={styles.image}
         url={image}
-        urlLoad={{uri: _item.thumbnail.lqip}}
+        urlLoad={{uri: _item.thumbnail ? _item.thumbnail.lqip : ''}}
       />
       <View style={styles.boxBtn}>
         <Label icon={false} style={styles.label} viewStyle={{}}>

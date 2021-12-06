@@ -10,6 +10,7 @@ import {Loading} from 'components';
 import {styles} from './styles';
 import {COLORS} from 'styles';
 import {Login} from 'container';
+import {routes} from 'utils/Constants';
 
 export interface Props {
   navigation: any;
@@ -26,7 +27,7 @@ const LoginView: React.FC<Props> = _props => {
 
   useEffect(() => {
     if (auth.signed) {
-      _props.navigation.push('Arts');
+      _props.navigation.push(routes.arts);
     }
   }, [_props.navigation, auth.signed]);
 

@@ -11,4 +11,10 @@ export const URL = {
   imageEnd: '/full/843,/0/default.jpg',
 };
 
+export const routes = {
+  login: 'login',
+  arts: 'Arts',
+  cart: 'Cart',
+};
+
 export const ICON_LOGO = require('assets/icons/atom.png');

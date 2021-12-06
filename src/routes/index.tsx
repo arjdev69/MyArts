@@ -15,6 +15,7 @@ import {Button} from 'components';
 import {COLORS} from 'styles';
 import {styles} from './styles';
 import {formatPrice} from 'utils';
+import {routes} from 'utils/Constants';
 
 const Stack = createStackNavigator();
 
@@ -26,12 +27,6 @@ const Routes: React.FC = () => {
   cart.map((c: {colorfulness: number}) => {
     value = c.colorfulness + value;
   });
-
-  const routes = {
-    login: 'login',
-    arts: 'Arts',
-    cart: 'Cart',
-  };
 
   return (
     <NavigationContainer>
@@ -69,7 +64,7 @@ const Routes: React.FC = () => {
                   activeOpacity={0.6}
                   disabled={false}
                   onPress={() => {
-                    navigation.push('Cart');
+                    navigation.push(routes.cart);
                   }}>
                   <Icon name="opencart" size={24} color={COLORS.lightColor} />
                   {cart.length > 0 && (

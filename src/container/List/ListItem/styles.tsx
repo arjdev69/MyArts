@@ -42,4 +42,10 @@ export const styles = StyleSheet.create({
     fontSize: HP('2%'),
     color: 'white',
   },
+  listItem: {
+    flex: 1,
+    flexDirection: 'column',
+    alignItems: 'center',
+    padding: 0,
+  },
 });

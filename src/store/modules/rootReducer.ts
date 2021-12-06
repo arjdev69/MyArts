@@ -7,5 +7,5 @@ import Cart from './Cart/reducer';
 export default combineReducers({
   Auth: Auths,
   Arts: Arts,
-  Cart: Cart,
+  CartShop: Cart,
 });

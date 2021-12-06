@@ -19,11 +19,11 @@ export default function Cart(
 ) {
   return produce(state, draft => {
     switch (action.type) {
-      case '@UPDATE_VALUE/GET_LIST_ARTS': {
-        draft.loading = true;
+      case '@UPDATE_VALUE/GET_LIST_CART': {
+        draft.loading = false;
         break;
       }
-      case '@UPDATE_VALUE/SET_LIST_ARTS': {
+      case '@UPDATE_VALUE/SET_LIST_CART': {
         draft.cart = action.payload.cart;
         draft.loading = false;
         break;

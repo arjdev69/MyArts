@@ -18,8 +18,6 @@ export function* signIn({payload}) {
       token: response.token,
     };
 
-    console.log(response);
-
     if (login) {
       api.defaults.headers.Authorization = `Bearer ${login.token}`;
       api.defaults.headers['access-token'] = login.token;

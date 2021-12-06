@@ -1,5 +1,7 @@
 import React from 'react';
 
+import {View, Text} from 'react-native';
+
 import {useSelector} from 'react-redux';
 
 import {NavigationContainer} from '@react-navigation/native';
@@ -12,12 +14,19 @@ import {Button} from 'components';
 
 import {COLORS} from 'styles';
 import {styles} from './styles';
-import {View} from 'react-native';
+import {formatPrice} from 'utils';
 
 const Stack = createStackNavigator();
 
 const Routes: React.FC = () => {
   const auth = useSelector((state: any) => state.Auth);
+  const {cart} = useSelector((state: any) => state.CartShop);
+  let value = 0;
+
+  cart.map((c: {colorfulness: number}) => {
+    value = c.colorfulness + value;
+  });
+
   const routes = {
     login: 'login',
     arts: 'Arts',
@@ -63,6 +72,11 @@ const Routes: React.FC = () => {
                     navigation.push('Cart');
                   }}>
                   <Icon name="opencart" size={24} color={COLORS.lightColor} />
+                  {cart.length > 0 && (
+                    <View style={styles.badge}>
+                      <Text style={styles.text}>{cart.length}</Text>
+                    </View>
+                  )}
                 </Button>
               </View>
             ),
@@ -72,10 +86,15 @@ const Routes: React.FC = () => {
           name={routes.cart}
           component={CartView}
           options={({navigation}) => ({
-            title: '',
+            title: 'Valor Total: R$ ' + formatPrice(value),
             headerStyle: {
               backgroundColor: COLORS.secondaryDark,
               height: 120,
+            },
+            headerTintColor: COLORS.primary,
+            headerTitleStyle: {
+              alignItems: 'center',
+              fontSize: 14,
             },
             gestureEnabled: false,
           })}

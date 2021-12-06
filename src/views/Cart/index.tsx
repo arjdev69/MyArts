@@ -3,10 +3,20 @@ import {View} from 'react-native';
 
 import {Cart} from 'container';
 
-const CartView: React.FC = () => {
+export interface Props {
+  navigation: {
+    push: any;
+  };
+}
+
+const CartView: React.FC<Props> = props => {
+  const goHome = () => {
+    props.navigation.push('Arts');
+  };
+
   return (
     <View>
-      <Cart />
+      <Cart goHome={goHome} />
     </View>
   );
 };

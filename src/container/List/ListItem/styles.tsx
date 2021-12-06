@@ -30,6 +30,15 @@ export const styles = StyleSheet.create({
     padding: 5,
     width: '100%',
   },
+  btnHome: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    backgroundColor: COLORS.transparentDarkColor,
+    borderRadius: 30,
+    padding: 15,
+    margin: 10,
+  },
   labelShop: {
     color: COLORS.primary,
     margin: 5,
@@ -48,6 +57,18 @@ export const styles = StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'center',
     padding: 0,
+  },
+  emptyCart: {
+    flex: 1,
+    backgroundColor: COLORS.transparentDarkColor,
+    margin: 5,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  emptyCartText: {
+    fontSize: 20,
+    color: COLORS.primary,
+    margin: 5,
   },
   viewStyle: {
     flex: 1,

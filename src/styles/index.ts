@@ -42,6 +42,9 @@ export const COLORS = {
   transparentLoadColor: '#0000004f',
   transparentLightColor: '#FFF5',
   transparentDarkColor: '#0005',
+
+  /* ---- */
+  colorBadge: '#FF011191',
 };
 
 export const SIZES = {

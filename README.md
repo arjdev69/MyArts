@@ -1,6 +1,6 @@
 # MyArts
 
-#Demo AppVideo
+#Demo AppVideo - Click in image
 [![img_tag](https://raw.githubusercontent.com/arjdev69/MyArts/master/src/assets/icons/atom.png)](https://www.youtube.com/watch?v=CviIV7g-VO0)
 
 #Cart

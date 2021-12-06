@@ -4,3 +4,10 @@ export const isValidEmail = (email: string) => {
   );
   return emailRegex.test(email);
 };
+
+export const formatPrice = (number: number | bigint) => {
+  return new Intl.NumberFormat('pt-BR', {
+    style: 'currency',
+    currency: 'BRL',
+  }).format(number);
+};

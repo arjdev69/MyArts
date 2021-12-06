@@ -9,12 +9,13 @@ import {Box, ImageLoad, Label} from 'components';
 
 import {styles, ShopButton} from './styles';
 import {useDispatch, useSelector} from 'react-redux';
-
 export interface Props {
   _item: {
     id: number;
     title: String;
     image_id: String;
+    priceFormatted: String;
+    selected: boolean;
     thumbnail: {
       lqip: String;
       width: number;
@@ -32,9 +33,15 @@ const ListItem: React.FC<Props> = props => {
     uri: URL.imageStart + _item.image_id + URL.imageEnd,
   };
 
-  useEffect(() => {
-    console.log(cart);
-  }, [cart]);
+  const controlCart = () => {
+    if (_item.selected) {
+      let cartDraft = cart.filter((c: {id: number}) => c.id !== _item.id);
+      dispatch(setListCart(cartDraft));
+    } else {
+      let item = [...cart, {..._item, selected: true}];
+      dispatch(setListCart(item));
+    }
+  };
 
   return (
     <Box styles={styles.box}>
@@ -47,13 +54,15 @@ const ListItem: React.FC<Props> = props => {
         <Label icon={false} style={styles.label} viewStyle={{}}>
           {_item.title.substr(0, 15) + '...'}
         </Label>
-        <ShopButton
-          onPress={() => {
-            let item = [...cart, _item];
-            dispatch(setListCart(item));
-          }}>
-          <Label icon={false} style={styles.labelShop} viewStyle={{}}>
-            COMPRAR
+        <Label icon={false} style={styles.label} viewStyle={{}}>
+          {_item.priceFormatted}
+        </Label>
+        <ShopButton onPress={controlCart}>
+          <Label
+            icon={_item.selected ? 'remove-circle-outline' : 'attach-money'}
+            style={styles.labelShop}
+            viewStyle={styles.viewStyle}>
+            {_item.selected ? 'REMOVER' : 'COMPRAR'}
           </Label>
         </ShopButton>
       </View>

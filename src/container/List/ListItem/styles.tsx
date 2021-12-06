@@ -32,6 +32,7 @@ export const styles = StyleSheet.create({
   },
   labelShop: {
     color: COLORS.primary,
+    margin: 5,
   },
   image: {
     height: HP('20%'),
@@ -47,5 +48,11 @@ export const styles = StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'center',
     padding: 0,
+  },
+  viewStyle: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });

@@ -86,7 +86,7 @@ const Routes: React.FC = () => {
           name={routes.cart}
           component={CartView}
           options={({navigation}) => ({
-            title: 'Valor Total: R$ ' + formatPrice(value),
+            title: 'Valor Total: ' + formatPrice(value),
             headerStyle: {
               backgroundColor: COLORS.secondaryDark,
               height: 120,

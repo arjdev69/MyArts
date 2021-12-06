@@ -2,19 +2,17 @@ import produce from 'immer';
 
 const INITIAL_STATE = {
   _id: 0,
-  arts: [],
-  art: [],
+  cart: [],
   loading: false,
 };
 
-export default function Arts(
+export default function Cart(
   state = INITIAL_STATE,
   action: {
     type: any;
     payload: {
       _id: any;
-      arts: [];
-      art: [];
+      cart: [];
       loading: false;
     };
   },
@@ -26,17 +24,7 @@ export default function Arts(
         break;
       }
       case '@UPDATE_VALUE/SET_LIST_ARTS': {
-        draft.arts = action.payload.arts;
-        draft.loading = false;
-        break;
-      }
-      case '@UPDATE_VALUE/GET_DETAIL_ART': {
-        draft._id = action.payload._id;
-        draft.loading = true;
-        break;
-      }
-      case '@UPDATE_VALUE/SET_DETAIL_ART': {
-        draft.art = action.payload.art;
+        draft.cart = action.payload.cart;
         draft.loading = false;
         break;
       }

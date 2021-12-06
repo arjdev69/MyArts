@@ -1,6 +1,6 @@
 # MyArts
 
-###APK ![](https://github.com/arjdev69/MyArts/blob/master/android/app/release/app-release.apk?raw=true)
+###APK ![APK](https://github.com/arjdev69/MyArts/blob/master/android/app/release/app-release.apk?raw=true)
 
 #Demo AppVideo - Click in image
 [![img_tag](https://raw.githubusercontent.com/arjdev69/MyArts/master/src/assets/icons/atom.png)](https://www.youtube.com/watch?v=CviIV7g-VO0)
